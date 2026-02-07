@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-arena"
+version = "0.1.0"
+description = "LLM benchmarking arena - pit AI models against each other in games"
+requires-python = ">=3.11"
+dependencies = [
+    "dedalus_labs",
+    "click",
+    "pydantic>=2.0",
+    "python-chess",
+]
+
+[project.scripts]
+llm-arena = "llm_arena.cli:cli"
+
+[tool.setuptools.packages.find]
+include = ["llm_arena*"]
